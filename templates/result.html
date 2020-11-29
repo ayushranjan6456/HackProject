@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<meta charset="utf-8">
+<title>Team Fourth Dimension</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<!-- 
+<form class="multisteps-form__form" action="{{ url_for('predict')}}"method="post">
+  <input type="text" name="experience" placeholder="Experience" required="required" />
+    <input type="text" name="test_score" placeholder="Test Score" required="required" />
+<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form> -->
+<div class="wrapper">
+    <div class="steps-area steps-area-fixed">
+        <div class="image-holder">
+            <img src="{{ url_for('static', filename='img/side-img.jpg') }}" alt="">
+        </div>
+    </div>
+    <form class="multisteps-form__form" action="/" id="wizard" method="GET">
+        <div class="form-area position-relative">
+            <!-- div 1 -->
+            <div class="multisteps-form__panel js-active" data-animation="slideHorz">
+                <div class="wizard-forms">
+                    <div class="inner pb-100 clearfix">
+                        <div class="form-content pera-content">
+                            <div class="step-inner-content">
+
+                                <div class="form-inner-area">
+                                    <h2> {{ prediction_text }}</h2>
+                                    <h2> Assessment Report</h2>
+                                    <li>
+                                        {{ cp_text }}
+                                    </li>
+                                    <li>
+                                        {{ bp_text }}
+                                    </li>
+                                    <li>
+                                        {{ sugar_text }}
+                                    </li>
+                                    <Button style="margin-top: 50px;" type="submit" class="check" >Check Again</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/switch.js') }}"></script>
+{% endblock %}
